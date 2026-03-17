@@ -1,21 +1,24 @@
 // ==========================================
-// 1. RENDERIZAÇÃO DOS PROJETOS (Primeiro!)
+// 1. RENDERIZAÇÃO DOS PROJETOS
 // ==========================================
 const projects = [
     {
         title: "Profix",
         description: "O Profix é uma plataforma criada para conectar contratantes e prestadores de serviço de forma rápida, intuitiva e segura. Nosso objetivo é oferecer uma solução confiável e acessível, que promova eficiência no atendimento e facilite o processo de contratação, utilizando inteligência artificial para validar a identidade dos usuários por meio de documentos oficiais, garantindo mais segurança, praticidade para quem precisa de ajuda e visibilidade para quem oferece serviços.",
-        link: "https://github.com/Henripaecs/CienciaDaComputacao/tree/main/Profix"
+        link: "https://github.com/Henripaecs/CienciaDaComputacao/tree/main/Profix",
+        tools: ["Java", "PostgreSQL", "HTML5", "CSS3", "JavaScript"] // <-- Ferramentas aqui!
     },
     {
         title: "Maquininha de Finanças ESTRELA",
-        description: "Aplicação Web para gestão financeira de jogos de tabuleiro, utilizando JS puro e CSS.",
-        link: "https://henripaecs.github.io/BancoImobiliario/"
+        description: "Aplicação Web para gestão financeira de jogos de tabuleiro.",
+        link: "https://henripaecs.github.io/BancoImobiliario/",
+        tools: ["JavaScript", "HTML5", "CSS3"]
     },
     {
         title: "Algoritmos de Ordenação",
         description: "Implementação e análise de complexidade (Big O) de Quick Sort, Shell Sort e árvores balanceadas.",
-        link: "https://github.com/Henripaecs/CienciaDaComputacao/tree/main/AEDs2"
+        link: "https://github.com/Henripaecs/CienciaDaComputacao/tree/main/AEDs2",
+        tools: ["C", "Java", "Estrutura de Dados"]
     }
 ];
 
@@ -23,10 +26,16 @@ const container = document.getElementById('project-container');
 
 if (container) {
     projects.forEach(project => {
+        // Pega a lista de ferramentas e transforma em tags HTML
+        const toolsHtml = project.tools.map(tool => `<span class="project-tool">${tool}</span>`).join('');
+
         const card = `
             <div class="project-card">
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
+                <div class="project-tools">
+                    ${toolsHtml}
+                </div>
                 <a href="${project.link}" target="_blank" class="btn">Ver Projeto</a>
             </div>
         `;
