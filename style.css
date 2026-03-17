@@ -15,26 +15,44 @@
     font-family: 'Segoe UI', sans-serif; 
 }
 
-/* ==============================
-   ESTILOS BASE (ESTRUTURA)
-   ============================== */
+/* --- OCULTAR BARRA DE ROLAGEM --- */
+/* Chrome, Safari e Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+/* Firefox, IE e Edge */
 body { 
     background-color: var(--bg-color); 
     color: var(--text-color); 
     line-height: 1.6; 
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 
+/* ==============================
+   ESTILOS BASE (ESTRUTURA)
+   ============================== */
 header, section {
-    /* Fundo transparente para exibir as partículas de background */
     background-color: transparent !important;
 }
 
+/* --- HOME E CENTRALIZAÇÃO --- */
 header { 
     height: 100vh; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
     text-align: center; 
+    padding: 0 20px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px; /* Impede que o texto estique muito nas laterais */
+    margin: 0 auto;
 }
 
 section { 
@@ -83,6 +101,7 @@ nav ul li a {
     text-decoration: none; 
     margin-left: 2rem; 
     transition: 0.3s; 
+    font-weight: 500;
 }
 
 nav ul li a:hover { 
@@ -92,8 +111,6 @@ nav ul li a:hover {
 /* ==============================
    COMPONENTES
    ============================== */
-
-/* --- Foto de Perfil --- */
 .profile-pic {
     width: 150px; 
     height: 150px; 
@@ -104,7 +121,6 @@ nav ul li a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
 }
 
-/* --- Botões Padrões --- */
 .btn {
     display: inline-block; 
     margin-top: 20px; 
@@ -121,7 +137,10 @@ nav ul li a:hover {
     background: white;
 }
 
-/* --- Tags de Habilidades (Skills) --- */
+.skills {
+    margin-top: 20px;
+}
+
 .skills span {
     display: inline-block; 
     padding: 5px 15px; 
@@ -133,7 +152,6 @@ nav ul li a:hover {
     -webkit-backdrop-filter: blur(8px);
 }
 
-/* --- Cards (Projetos e Certificados) --- */
 .project-grid {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -149,6 +167,16 @@ nav ul li a:hover {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Regras Flexbox para alinhar os botões na mesma altura */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Empurra apenas o botão do card para o final */
+.project-card .btn {
+    margin-top: auto; 
 }
 
 .project-card:hover { 
@@ -166,7 +194,6 @@ nav ul li a:hover {
     font-size: 0.9rem; 
 }
 
-/* --- Ferramentas / Tecnologias nos Projetos --- */
 .project-tools {
     display: flex;
     flex-wrap: wrap;
@@ -180,12 +207,11 @@ nav ul li a:hover {
     font-weight: 600;
     padding: 4px 10px;
     border-radius: 15px;
-    background: rgba(56, 189, 248, 0.1); /* Fundo azul bem clarinho/transparente */
-    color: var(--accent-color); /* Texto na cor azul de destaque */
+    background: rgba(56, 189, 248, 0.1); 
+    color: var(--accent-color); 
     border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
-/* --- Estilos Específicos para Certificados --- */
 #certificates p {
     margin-bottom: 30px;
 }
@@ -239,11 +265,7 @@ nav ul li a:hover {
     filter: brightness(1.2);
 }
 
-.contact-button i {
-    font-size: 1.2rem;
-}
-
-/* Cores das marcas sociais */
+.contact-button i { font-size: 1.2rem; }
 .github { background-color: #333; }
 .linkedin { background-color: #0077b5; }
 .whatsapp { background-color: #25d366; }
@@ -260,4 +282,43 @@ nav ul li a:hover {
     left: 0;
     z-index: -1;
     background-color: var(--bg-color);
+}
+
+/* ==============================
+   RESPONSIVIDADE (MOBILE)
+   ============================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Coloca o logo e os links em coluna */
+        padding: 1rem 5%;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Permite que os links quebrem linha */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav ul li a {
+        margin-left: 0; /* Remove a margem lateral no celular */
+        font-size: 0.9rem;
+    }
+
+    header {
+        padding: 0 5%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 80px 5%; /* Diminui o espaçamento lateral em telas menores */
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
 }

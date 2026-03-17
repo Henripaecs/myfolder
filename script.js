@@ -4,7 +4,7 @@
 const projects = [
     {
         title: "Profix",
-        description: "O Profix é uma plataforma criada para conectar contratantes e prestadores de serviço de forma rápida, intuitiva e segura. Nosso objetivo é oferecer uma solução confiável e acessível, que promova eficiência no atendimento e facilite o processo de contratação, utilizando inteligência artificial para validar a identidade dos usuários por meio de documentos oficiais, garantindo mais segurança, praticidade para quem precisa de ajuda e visibilidade para quem oferece serviços.",
+        description: "O Profix conecta contratantes e prestadores de serviço com agilidade e segurança. Através de uma plataforma intuitiva e validação de identidade por IA, garantimos confiança para quem contrata e visibilidade para quem trabalha.",
         link: "https://github.com/Henripaecs/CienciaDaComputacao/tree/main/Profix",
         tools: ["Java", "PostgreSQL", "HTML5", "CSS3", "JavaScript"] // <-- Ferramentas aqui!
     },
