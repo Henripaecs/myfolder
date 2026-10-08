@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Henrique Carvalho</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -23,19 +26,38 @@
 
     <header id="home">
     <div class="header-content">
-        <img src="img/perfil_img.JPG" alt="Minha Foto" class="profile-pic">
-        
-        <h1>Olá, sou <span>Henrique Carvalho</span></h1>
-        <p>Acadêmico de Ciência da Computação na PUC Minas de 19 anos. Desenvolvedor em formação com foco em IA e Engenharia de Software. Transformando curiosidade em código e dados em soluções inteligentes.</p>
-        <a href="#projects" class="btn">Ver Projetos</a>
+        <div class="hero-text">
+            <h1>Olá, sou <span>Henrique Carvalho</span></h1>
+            <p>Estudante de Ciência da Computação na PUC Minas (6º período), com foco em desenvolvimento Backend com Java e Node.js e na integração de APIs de Inteligência Artificial. Busco estágio ou trainee em desenvolvimento de software.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn">Ver projetos</a>
+                <a href="#contact" class="btn ghost">Entrar em contato</a>
+            </div>
+        </div>
+        <div class="hero-photo">
+            <img src="img/perfil_img.JPG" alt="Foto de Henrique Carvalho" class="profile-pic">
+        </div>
     </div>
 </header>
 
     <section id="about">
         <h2>Sobre Mim</h2>
-        <p>Graduando em Ciência da Computação pela PUC Minas, sou um entusiasta de tecnologia movido pela resolução de problemas complexos. Meu foco atual está no desenvolvimento de software e na aplicação prática de Inteligência Artificial. Busco constantemente unir o rigor acadêmico com a agilidade das novas tecnologias, explorando arquiteturas modernas e métodos inovadores para criar soluções de impacto.</p>
+        <p>Estudante de Ciência da Computação com experiência prática em projetos Full Stack de ponta a ponta, incluindo a integração de APIs de IA como Google Gemini e Azure Cognitive Services. Trabalho com metodologias ágeis (Scrum e Kanban) e tenho interesse crescente em Segurança da Informação.</p>
+
+        <div class="education">
+            <div class="cert-emoji">🎓</div>
+            <div>
+                <h3>Bacharelado em Ciência da Computação</h3>
+                <p>PUC Minas, ênfase em Desenvolvimento de Software e Análise de Dados. 2024 a 2028 (previsão).</p>
+            </div>
+        </div>
+
         <div class="skills">
-            <span>HTML/CSS</span> <span>JavaScript</span> <span>Java</span> <span>C</span> <span>PostgreSQL</span> <span>Estruturas de Dados</span>
+            <div class="skill-group"><h3>Linguagens</h3><div><span>Java</span><span>Python</span><span>Node.js</span><span>JavaScript</span><span>C/C++</span><span>SQL (PostgreSQL)</span><span>HTML5</span><span>CSS3</span></div></div>
+            <div class="skill-group"><h3>Frameworks</h3><div><span>Spring Boot</span><span>Maven</span><span>Spark Framework</span><span>Express.js</span></div></div>
+            <div class="skill-group"><h3>IA e Cloud</h3><div><span>Google Gemini API</span><span>Azure Cognitive Services</span></div></div>
+            <div class="skill-group"><h3>Ferramentas</h3><div><span>Git/GitHub</span><span>Docker</span><span>Figma</span><span>Modelagem Relacional</span></div></div>
+            <div class="skill-group"><h3>Idiomas</h3><div><span>Português (nativo)</span><span>Inglês (intermediário)</span></div></div>
         </div>
     </section>
 
@@ -51,17 +73,20 @@
         
         <div class="project-grid">
             
+            <!-- PUC Minas -->
             <div class="project-card certificate-card">
-                <i class="fas fa-graduation-cap cert-icon"></i>
+                <div class="cert-emoji">🎓</div>
                 <h3>Graduação Ciência da Computação</h3>
-                <p>Instituição: Puc Minas</p>
+                <p>Instituição: PUC Minas</p>
+                <p class="cert-summary">Bacharelado em Ciência da Computação, focado em engenharia de software e inteligência artificial.</p>
                 <span class="cert-date">Previsão de formar em: 2028</span>
                 <br>
                 <a href="#" target="_blank" class="btn">Ver Credencial</a>
             </div>
 
+            <!-- Swift -->
             <div class="project-card certificate-card">
-                <i class="fas fa-certificate cert-icon"></i>
+                <div class="cert-emoji">📜</div>
                 <h3>Conceitos e Fundamentos: Algoritmos e Programação Orientada a Objetos com Swift</h3>
                 <p>Instituição: HACKATRUCK makespace</p>
                 <span class="cert-date">Concluído em: 2025</span>
@@ -69,12 +94,78 @@
                 <a href="https://drive.google.com/file/d/1OITNmMm6TOBeU-_4Msha1NR4ROAR96HW/view?usp=sharing" target="_blank" class="btn">Ver Credencial</a>
             </div>
 
+            <!-- Java: Criando sua primeira aplicação -->
+            <div class="project-card certificate-card">
+                <div class="cert-emoji">📜</div>
+                <h3>Java: criando a sua primeira aplicação</h3>
+                <p>Instituição: Alura</p>
+                <p class="cert-summary">Introdução ao desenvolvimento em Java, abordando o controle de fluxo da aplicação e a construção de um catálogo de filmes.</p>
+                <span class="cert-date">Concluído em: 20/08/2026</span>
+                <br>
+                <a href="certificados/Henrique Paes De Carvalho - Curso Java_ criando a sua primeira aplicação - Alura.pdf" target="_blank" class="btn">Ver PDF</a>
+            </div>
+
+            <!-- Java: Orientação a Objetos -->
+            <div class="project-card certificate-card">
+                <div class="cert-emoji">📜</div>
+                <h3>Java: aplicando a Orientação a Objetos</h3>
+                <p>Instituição: Alura</p>
+                <p class="cert-summary">Focado na modelagem de sistemas (ScreenMatch), controle de acesso aos dados, herança e reaproveitamento de comportamentos em comum.</p>
+                <span class="cert-date">Concluído em: 08/10/2026</span>
+                <br>
+                <a href="certificados/Henrique Paes De Carvalho - Curso Java_ aplicando a Orientação a Objetos - Alura.pdf" target="_blank" class="btn">Ver PDF</a>
+            </div>
+
+            <!-- Java: Lambdas, Streams e Spring -->
+            <div class="project-card certificate-card">
+                <div class="cert-emoji">📜</div>
+                <h3>Java: trabalhando com lambdas, streams e Spring Framework</h3>
+                <p>Instituição: Alura</p>
+                <p class="cert-summary">Desenvolvimento com o Spring Framework, focado em modelagem de dados, manipulação de coleções por fluxos e geração de estatísticas com lambdas e streams.</p>
+                <span class="cert-date">Concluído em: 08/10/2026</span>
+                <br>
+                <a href="certificados/Henrique Paes De Carvalho - Curso Java_ trabalhando com lambdas, streams e Spring Framework - Alura.pdf" target="_blank" class="btn">Ver PDF</a>
+            </div>
+
+            <!-- Pensamento Computacional -->
+            <div class="project-card certificate-card">
+                <div class="cert-emoji">📜</div>
+                <h3>Pensamento computacional: fundamentos da computação</h3>
+                <p>Instituição: Alura</p>
+                <p class="cert-summary">Aborda a resolução de problemas através da lógica de programação e a introdução da Inteligência Artificial no desenvolvimento de software.</p>
+                <span class="cert-date">Concluído em: 19/08/2026</span>
+                <br>
+                <a href="certificados/Henrique Paes De Carvalho - Curso Pensamento computacional_ fundamentos da computação e lógica de programação - Alura.pdf" target="_blank" class="btn">Ver PDF</a>
+            </div>
+
+            <!-- Power BI Desktop -->
+            <div class="project-card certificate-card">
+                <div class="cert-emoji">📜</div>
+                <h3>Power BI Desktop: construindo meu primeiro dashboard</h3>
+                <p>Instituição: Alura</p>
+                <p class="cert-summary">Ensina a conectar dados, realizar cálculos, criar análises visuais, estilizar o relatório e publicá-lo via Power Bi Service.</p>
+                <span class="cert-date">Concluído em: 28/09/2026</span>
+                <br>
+                <a href="certificados/Henrique Paes De Carvalho - Curso Power BI Desktop_ construindo meu primeiro dashboard - Alura.pdf" target="_blank" class="btn">Ver PDF</a>
+            </div>
+
+            <!-- Power BI Visualizando Dados -->
+            <div class="project-card certificate-card">
+                <div class="cert-emoji">📜</div>
+                <h3>Power BI: visualizando e analisando dados</h3>
+                <p>Instituição: Alura</p>
+                <p class="cert-summary">Estruturação de relatórios com foco na análise de categorias, tendências ao longo do tempo e monitoramento de indicadores chave.</p>
+                <span class="cert-date">Concluído em: 30/09/2026</span>
+                <br>
+                <a href="certificados/Henrique Paes De Carvalho - Curso Power BI_ visualizando e analisando dados - Alura.pdf" target="_blank" class="btn">Ver PDF</a>
+            </div>
+
         </div>
     </section>
 
     <section id="contact">
         <h2>Vamos Conversar?</h2>
-        <p>Estou disponível para novos projetos e colaborações.</p>
+        <p>Busco oportunidade de estágio ou trainee em desenvolvimento de software. Também estou aberto a novos projetos e colaborações.</p>
         
         <div class="contact-container">
             <a href="https://github.com/Henripaecs" target="_blank" class="contact-button github">
@@ -86,11 +177,13 @@
             <a href="https://wa.me/5531973006297" target="_blank" class="contact-button whatsapp">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
-            <a href="mailto:henriquepaesc26@exemplo.com" class="contact-button email">
+            <a href="mailto:henriquepaesc26@gmail.com" class="contact-button email">
                 <i class="fas fa-envelope"></i> Email
             </a>
         </div>
     </section>
+
+    <footer>© 2026 Henrique Carvalho</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <script src="script.js"></script>

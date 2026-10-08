@@ -4,9 +4,14 @@
 const projects = [
     {
         title: "Profix",
-        description: "O Profix conecta contratantes e prestadores de serviço com agilidade e segurança. Através de uma plataforma intuitiva e validação de identidade por IA, garantimos confiança para quem contrata e visibilidade para quem trabalha.",
+        description: "Plataforma Full Stack, desenvolvida em equipe, que conecta clientes a prestadores de serviços residenciais. A validação automática de documentos com Azure Cognitive Services elimina a checagem manual no cadastro. Atuei na modelagem do banco, na arquitetura e na integração entre frontend e backend.",
         link: "https://github.com/Henripaecs/CienciaDaComputacao/tree/main/Profix",
-        tools: ["Java", "PostgreSQL", "HTML5", "CSS3", "JavaScript"] // <-- Ferramentas aqui!
+        tools: ["Java", "Spark Framework", "PostgreSQL", "Azure Cognitive Services", "JavaScript"]
+    },
+    {
+        title: "Automação de Orçamentos com IA",
+        description: "Sistema criado para uma empresa de instalação de ar-condicionado que automatiza o atendimento inicial. Ele interpreta as solicitações dos clientes e gera respostas e orçamentos, reduzindo o tempo de resposta e o esforço manual da equipe comercial.",
+        tools: ["Node.js", "Google Gemini API"]
     },
     {
         title: "Maquininha de Finanças ESTRELA",
@@ -25,6 +30,7 @@ const projects = [
 const container = document.getElementById('project-container');
 
 if (container) {
+    container.innerHTML = '';
     projects.forEach(project => {
         // Pega a lista de ferramentas e transforma em tags HTML
         const toolsHtml = project.tools.map(tool => `<span class="project-tool">${tool}</span>`).join('');
@@ -36,7 +42,7 @@ if (container) {
                 <div class="project-tools">
                     ${toolsHtml}
                 </div>
-                <a href="${project.link}" target="_blank" class="btn">Ver Projeto</a>
+                ${project.link ? `<a href="${project.link}" target="_blank" class="btn">Ver Projeto</a>` : ''}
             </div>
         `;
         container.innerHTML += card;
@@ -71,6 +77,20 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Navbar: sombra ao rolar e link ativo conforme a seção
+const navbar = document.getElementById('navbar');
+const navLinks = document.querySelectorAll('nav ul a');
+const sections = [...document.querySelectorAll('header[id], section[id]')];
+
+function updateNav() {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    const y = window.scrollY + window.innerHeight / 3;
+    const current = sections.filter(sec => sec.offsetTop <= y).pop();
+    navLinks.forEach(a => a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id));
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+
 // ==========================================
 // 3. FUNDO ANIMADO (Fica por último)
 // ==========================================
@@ -88,9 +108,9 @@ tsParticles.load("tsparticles", {
         },
     },
     particles: {
-        color: { value: "#38bdf8" },
+        color: { value: ["#38bdf8", "#818cf8"] },
         links: {
-            color: "#38bdf8",
+            color: "#818cf8",
             distance: 150,
             enable: true,
             opacity: 0.2,
@@ -98,7 +118,7 @@ tsParticles.load("tsparticles", {
         },
         move: { enable: true, speed: 1.5 },
         number: { density: { enable: true, area: 800 }, value: 80 },
-        opacity: { value: 0.3 },
+        opacity: { value: 0.35 },
         size: { value: { min: 1, max: 3 } },
     }
 });
